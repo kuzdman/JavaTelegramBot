@@ -1,7 +1,7 @@
 package ru.oopteam.bot.writers;
 
 public class Response {
-    private String message;
+    private final String message;
 
 
     public Response(String text) {
