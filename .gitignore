@@ -6,7 +6,7 @@
 *.ear
 *.nar
 hs_err_pid*
-config.properties
+scr/main/resources/config.properties
 */test
 
 # Maven
