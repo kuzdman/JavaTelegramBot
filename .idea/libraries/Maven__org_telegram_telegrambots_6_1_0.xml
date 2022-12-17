@@ -2,7 +2,6 @@
   <library name="Maven: org.telegram:telegrambots:6.1.0">
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambots/6.1.0/telegrambots-6.1.0.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambots/6.1.0/telegrambots-6.1.0-jar-with-dependencies.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambots/6.1.0/telegrambots-6.1.0-javadoc.jar!/" />
