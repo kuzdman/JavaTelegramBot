@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class GettingCurrency {
-    public static void main(String[] args)  {
+public class GettingCurrency{
+    public static HashMap<String, String> getCurrency()  {
 
         try {
 
@@ -30,11 +30,12 @@ public class GettingCurrency {
                 currencyDictionary.put(CryptoName.get(i), Currency.get(i));
 
             }
-            System.out.println(currencyDictionary);
+            return currencyDictionary;
 
         }
         catch (Exception e){
             e.printStackTrace();
         }
+        return null;
     }
 }
