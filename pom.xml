@@ -15,6 +15,7 @@
             <artifactId>telegrambots</artifactId>
             <version>6.1.0</version>
         </dependency>
+
         <dependency>
             <groupId>ru.oopteam.bot</groupId>
             <artifactId>java-tg-bot</artifactId>
@@ -34,7 +35,11 @@
             <version>LATEST</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.10.2</version>
+        </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>

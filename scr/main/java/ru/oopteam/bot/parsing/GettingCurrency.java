@@ -2,32 +2,49 @@ package ru.oopteam.bot.parsing;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
+
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Properties;
 
 
 public class GettingCurrency{
+
+    private static String urlToMarket = "https://www.binance.com/ru/markets";
+    private static String currenciesConfig = "css-ovtrou";
+    private static String cryptoNamesConfig = "css-1x8dg53";
+
+    public static void initialize() throws IOException {
+        Properties properties = new Properties();
+        properties.load(new FileInputStream("/market.properties"));
+        urlToMarket = properties.getProperty("urlToMarket");
+        currenciesConfig = properties.getProperty("currencies");
+        cryptoNamesConfig = properties.getProperty("cryptoNames");
+    }
+
     public static HashMap<String, String> getCurrency()  {
 
         try {
 
-            var doc = Jsoup.connect("https://www.binance.com/ru/markets").get();
-            var titleElements = doc.getElementsByClass("css-ovtrou");
-            var titleElements2 = doc.getElementsByClass("css-1x8dg53");
+            var doc = Jsoup.connect(urlToMarket).get();
+            var currencies = doc.getElementsByClass(currenciesConfig);
+            var cryptoNames = doc.getElementsByClass(cryptoNamesConfig);
 
-            List<String> CryptoName = titleElements2.stream()
+            List<String> cryptoName = cryptoNames.stream()
                     .map(Element::text)
-                    .collect(Collectors.toList());
+                    .toList();
+
             //Adding Crypto Names to list
-            List<String> Currency = titleElements.stream()
+            List<String> currency = currencies.stream()
                     .map(Element::text)
-                    .collect(Collectors.toList());
-            //Adding Crypto Currency to list
+                    .toList();
 
+            //Adding Crypto Currency to list
             HashMap<String, String> currencyDictionary = new HashMap<>();
-            for (int i = 0; i < CryptoName.size();i++){
-                currencyDictionary.put(CryptoName.get(i), Currency.get(i));
+            for (int i = 0; i < cryptoName.size();i++){
+                currencyDictionary.put(cryptoName.get(i), currency.get(i));
 
             }
             return currencyDictionary;
