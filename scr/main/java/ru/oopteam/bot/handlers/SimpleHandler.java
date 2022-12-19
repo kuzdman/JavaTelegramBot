@@ -4,8 +4,12 @@ import ru.oopteam.bot.readers.Request;
 import ru.oopteam.bot.writers.Response;
 
 public class SimpleHandler implements Handler {
-    @Override
+
     public Response handle(Request request) {
-        return new Response(request.getMessage());
+        if (request.getUserID() == null) {
+            String requestText = request.getMessage();
+            return new Response(requestText);
+        }
+        return new Response(request.getMessage(), request.getUserID());
     }
 }
