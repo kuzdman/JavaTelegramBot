@@ -43,10 +43,10 @@ public class GettingCurrency{
 
             //Adding Crypto Currency to list
             HashMap<String, String> currencyDictionary = new HashMap<>();
-            for (int i = 0; i < cryptoName.size();i++){
+            for (int i = 0; i < cryptoName.size(); i++){
                 currencyDictionary.put(cryptoName.get(i), currency.get(i));
-
             }
+
             return currencyDictionary;
 
         }
