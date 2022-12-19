@@ -52,8 +52,8 @@
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.11" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.13" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.11.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-simple:2.0.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-simple:2.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.15.3" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:2.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:2.0.6" level="project" />
   </component>
 </module>

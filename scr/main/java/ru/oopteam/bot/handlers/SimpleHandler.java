@@ -14,13 +14,15 @@ public class SimpleHandler implements Handler {
             String requestText = request.getMessage();
             System.out.println("QWerty");
             return new Response(requestText);
-
         }
+
         String message = request.getMessage();
         try {
             HashMap<String, String> currencyDictionary = getCurrency();
+
             assert currencyDictionary != null;
-            message = currencyDictionary.get(request.getMessage());
+            message = currencyDictionary.getOrDefault(request.getMessage(), "Не удалось получить заданную валюту");
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
